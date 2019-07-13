@@ -3,17 +3,17 @@ import boto3
 from contextlib import closing
 
 app = Flask(__name__)
-request = 0
+Drink = 0
 
 @app.route('/', methods=['POST', 'GET'])
 def home():
     item_requested = "none"
     if request.method == 'POST':
         item_requested = request.form['submit']
-        request = 1
+        Drink = 1
         eng_to_cn_audio("Item has been ordered!") 
     else:
-        request = 0
+        Drink = 0
 
     return render_template('home.html')
 
