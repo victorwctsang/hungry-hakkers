@@ -1,3 +1,8 @@
+body {
+  background-color: azure;
+  color: black;
+  font-size: 12;
+}
 .button {
     font-size: 1px;
   }
