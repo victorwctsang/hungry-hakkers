@@ -20,7 +20,45 @@
 
 		<div class="ui two column very relaxed grid">
 			<div class="column">
-			<h2>Outstanding Requests<h2>
+				<h2>Rooms Status: </h2>
+				<table class="fluid ui celled table">
+						<thead>
+						  <tr>
+							<th>Name</th>
+							<th>Room Number</th>
+							<th>Status</th>
+						  </tr>
+						</thead>
+						<tbody>
+						  <tr>
+							<td>Sarah</td>
+							<td>Room 1</td>
+							<td class="positive"><i class="icon checkmark"></i>No Outstanding Requests</td>
+						  </tr>
+						  <tr>
+							<td>Jimmy</td>
+							<td>Room 2</td>
+							<td class="positive"><i class="icon checkmark"></i>No Outstanding Requests</td>
+						  </tr>
+						  <tr>
+							{% if rq == 0 %}
+								<td>Ella</td>
+								<td>Room 3</td>
+								<td class="positive"><i class="icon checkmark"></i>No Outstanding Requests</td>
+							{% else %}
+								<td>Ella</td>
+								<td>Room 3</td>
+								<td class="negative"><i class="icon close"></i> Drink Requested</td>
+							{% endif %}
+						  </tr>
+						  <tr>
+							<td>Jill</td>
+							<td>Room 4</td>
+							<td class="positive"><i class="icon checkmark"></i>No Outstanding Requests</td>
+						  </tr>
+
+						</tbody>
+					  </table>
 			</div>
 			<div class="column">
 					<h2>Respond to Requests</h2>
@@ -29,19 +67,25 @@
 					{% else %}
 						<div class="ui inverted segment">
 							<div class="ui inverted form">
-							
-									<div class="field">
-											<label>Room 3 Request Response</label>
-											<textarea rows="2" placeholder="Response"></textarea>
-											
-									</div>
-
-							  <div class="ui green submit button">Submit</div>
+						<form method="post" id='form'>
+								<div class="field">
+										<label>Room 3 Request Response</label>
+											<!-- <textarea type="staff1" name="text" rows="2" placeholder="Response"></textarea>		 -->
+											<!-- <input type="submit" value="submit" name="submit"> -->
+											<input name="text">
+											<input type="submit" class="ui green submit button">
+								</div>
+							<!-- <button type="staff1" name="staff1" class="ui green submit button">Submit</button> -->
 							</div>
-						  </div>
-					{% endif %}
-
-								
+						</div>
+						<br>
+						Select a language:
+						<select name="language">
+							<option value="cn">Chinese</option>
+							<option value="sp">Spanish</option>
+						</select> 
+						</form>
+					{% endif %}					
 				</div>
 		</div>
 		

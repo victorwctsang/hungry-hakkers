@@ -2,6 +2,7 @@ from flask import Flask, render_template, request, redirect, url_for, abort
 
 from contextlib import closing
 import subprocess
+import boto3
 
 app = Flask(__name__)
 app.config['ENV'] = 'development'
@@ -10,11 +11,12 @@ app.config['TESTING'] = True
 
 @app.route('/', methods=['POST', 'GET'])
 def home():
+    drink = 0
     if request.method == 'POST':
         item_requested = request.form['submit']
         print(item_requested)
         language = request.form['language']
-
+        drink = 1
         if language == "cn":
             eng_to_cn_audio(item_requested) 
         else:
@@ -26,10 +28,23 @@ def home():
 
 @app.route('/staff', methods=['POST', 'GET'])
 def staff():
-    return render_template('staff.html')
+    return render_template('staff.html', rq=0)
+
+@app.route('/staff1', methods=['POST', 'GET'])
+def staff1():
+    if request.method == 'POST':
+        reply = request.form['text']
+        print(reply)
+        language = request.form['language']
+        if language == "cn":
+            eng_to_cn_audio(reply) 
+        else:
+            eng_to_es_audio(reply)
+
+        subprocess.call(['./test.sh'])
+    return render_template('staff.html', rq=1)
 
 
-    
 
 def eng_to_es_audio(str):
     translate = boto3.client('translate', region_name='us-east-1')
