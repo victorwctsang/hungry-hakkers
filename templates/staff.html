@@ -19,10 +19,68 @@
 			</div>
 
 		<div class="ui two column very relaxed grid">
-			<p>Approve</p>
 			<div class="column">
-			<p>Deny</p>
+				<h2>Rooms Status: </h2>
+				<table class="fluid ui celled table">
+						<thead>
+						  <tr>
+							<th>Name</th>
+							<th>Room Number</th>
+							<th>Status</th>
+						  </tr>
+						</thead>
+						<tbody>
+						  <tr>
+							<td>Sarah</td>
+							<td>Room 1</td>
+							<td class="positive"><i class="icon checkmark"></i>No Outstanding Requests</td>
+						  </tr>
+						  <tr>
+							<td>Jimmy</td>
+							<td>Room 2</td>
+							<td class="positive"><i class="icon checkmark"></i>No Outstanding Requests</td>
+						  </tr>
+						  <tr>
+							{% if rq == 0 %}
+								<td>Ella</td>
+								<td>Room 3</td>
+								<td class="positive"><i class="icon checkmark"></i> No Outstanding Requests</td>
+							{% else %}
+								<td>Ella</td>
+								<td>Room 3</td>
+								<td class="negative"><i class="icon close"></i> Drink Requested</td>
+							{% endif %}
+						  </tr>
+						  <tr>
+							<td>Jill</td>
+							<td>Room 4</td>
+							<td class="positive"><i class="icon checkmark"></i>No Outstanding Requests</td>
+						  </tr>
+
+						</tbody>
+					  </table>
 			</div>
+			<div class="column">
+					<h2>Respond to Requests</h2>
+					{% if rq == 0 %}
+					<h4>No outstanding requests :)</h4>
+					{% else %}
+						<div class="ui inverted segment">
+							<div class="ui inverted form">
+							
+									<div class="field">
+											<label>Room 3 Request Response</label>
+											<textarea rows="2" placeholder="Response"></textarea>
+											
+									</div>
+
+							  <div class="ui green submit button">Submit</div>
+							</div>
+						  </div>
+					{% endif %}
+
+								
+				</div>
 		</div>
 		
 		</div>
