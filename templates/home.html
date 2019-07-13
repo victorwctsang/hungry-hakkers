@@ -11,32 +11,36 @@
 </head>
 
 <body class="ui grid" style="margin: 50px 50px 50px 50px">
-		
-<div class="ui segment" style="width:700px;">
-		<div >
+	<form method="post" id='form'>
+		<div class="ui segment" style="width:700px;">
+			<div >
 				<img src="static/images/hakkas logo.png" alt="Logo" width="180" height="77">
 			</div>
-
-		<div class="ui two column very relaxed grid">
-			<div class="column">
-				<button class="fluid ui red button" style="width: 300px;"><h2>Help</h2><br><img src="static/images/asking.png" width="100" height="100"><br><br><br><br></button>
+			<div class="ui two column very relaxed grid">
+				<div class="column">
+					<button class="fluid ui red button" type='submit'  name='submit' value='help' style="width: 300px;"><h2>Help</h2><br><img src="static/images/asking.png" width="100" height="100"><br><br><br><br></button>
 					<br>
-			<button class="fluid ui green button" id="adgas" style="width: 300px;"><h2>Food</h2><br><img src="static/images/salad.png" width="100" height="100"><br><br><br><br></button>
-			<br>
-			<button class="fluid ui grey button" style="width: 300px;"><h2>Drink</h2><br><img src="static/images/water (1).png" width="100" height="100"><br><br><br><br></button>
-			
-			
+					<button class="fluid ui green button" type='submit' name='submit' value='food'  id="adgas" style="width: 300px;"><h2>Food</h2><br><img src="static/images/salad.png" width="100" height="100"><br><br><br><br></button>
+					<br>
+					<button class="fluid ui grey button"  type='submit' name='submit' value='drink' style="width: 300px;"><h2>Drink</h2><br><img src="static/images/water (1).png" width="100" height="100"><br><br><br><br></button>
+					
+				</div>
+				<div class="column">
+					<button class="fluid ui yellow button"  type='submit' name='submit' value='toilet' style="width: 300px;"><h2>Toilet</h2><br><img src="static/images/toilet.png" width="100" height="100"><br><br><br><br></button>
+					<br>
+					<button class="fluid ui blue button" type='submit' name='submit' value='hygeine' style="width: 300px;"><h2>Hygeine</h2><br><img src="static/images/sponge.png" width="100" height="100"><br><br><br><br></button>
+					<br>
+					<button class="fluid ui purple button" type='submit' name='submit' value='other' style="width: 300px;"><h2>Other</h2><br><img src="static/images/nurse.png" width="100" height="100"><br><br><br><br></button>
+					<br>
+					Select a language:
+					<select name="language">
+						<option value="cn">Chinese</option>
+						<option value="sp">Spanish</option>
+					</select> 
+				</div>
 			</div>
-			<div class="column">
-			<button class="fluid ui yellow button" style="width: 300px;"><h2>Toilet</h2><br><img src="static/images/toilet.png" width="100" height="100"><br><br><br><br></button>
-			<br>
-			<button class="fluid ui blue button" style="width: 300px;"><h2>Hygiene</h2><br><img src="static/images/sponge.png" width="100" height="100"><br><br><br><br></button>
-			<br>
-			<button class="fluid ui purple button" style="width: 300px;"><h2>Other</h2><br><img src="static/images/nurse.png" width="100" height="100"><br><br><br><br></button>
-			</div>
-		</div>
-		
-		</div>
+		</form>
+	</div>
 </body>
 </html>
 
