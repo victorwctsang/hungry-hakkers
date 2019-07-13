@@ -3,17 +3,17 @@ import boto3
 from contextlib import closing
 
 app = Flask(__name__)
-Drink = 0
+drink = 0
 
 @app.route('/', methods=['POST', 'GET'])
 def home():
-    item_requested = "none"
     if request.method == 'POST':
         item_requested = request.form['submit']
-        Drink = 1
-        eng_to_cn_audio("Item has been ordered!") 
+        print(item_requested)
+        drink = 1
+        eng_to_cn_audio(item_requested) 
     else:
-        Drink = 0
+        drink = 0
 
     return render_template('home.html')
 
@@ -31,6 +31,7 @@ def eng_to_cn_audio(str):
         TargetLanguageCode='zh'
     )
     translated_text = translated["TranslatedText"]
+    print(translated_text)
     response = polly.synthesize_speech(
         OutputFormat='mp3',
         Text=translated_text,
