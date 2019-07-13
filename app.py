@@ -28,6 +28,9 @@ def home():
 def staff():
     return render_template('staff.html')
 
+
+    
+
 def eng_to_es_audio(str):
     translate = boto3.client('translate', region_name='us-east-1')
     polly = boto3.client('polly')
